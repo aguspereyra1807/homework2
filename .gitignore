@@ -8,5 +8,12 @@ a.out
 *.obj
 *.gch
 
+# Makefile
+Makefile
+
+.vscode/
+
 # Ejecutables popios
 main
+bin/
+
