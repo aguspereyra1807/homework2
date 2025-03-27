@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+#include <iostream>
+
 
 using namespace std;
 
@@ -13,6 +15,8 @@ class Student {
         int getFileNumber() const;
         float getFinalGrade(std::string subject) const;
         float getAverageGrade() const;
+
+        bool operator>(const Student& other) const;
 
     private:
         std::string name;

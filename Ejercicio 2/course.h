@@ -1,10 +1,17 @@
 #pragma once
 #include "student.h"
+#include <memory>
 
 class Course {
     public:
-        void inscribeStudent(std::string name, int fileNumber);
+        Course();
+
+        bool inscribeStudent(std::string name, int fileNumber);
         void unsuscribeStudent(const int fileNumber);
+        bool isComplete();
+        bool isInscribed(const int fileNumber);
+
+        
     private:
-        mutable vector<Student> students;
+        vector<shared_ptr<Student>> students;
 };

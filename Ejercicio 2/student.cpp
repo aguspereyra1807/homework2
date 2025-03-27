@@ -24,3 +24,7 @@ float Student::getAverageGrade() const {
     }
     return average;
 }
+
+bool Student::operator>(const Student& other) const {
+    return this->name > other.name;
+}
