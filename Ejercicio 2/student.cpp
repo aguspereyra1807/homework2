@@ -28,3 +28,12 @@ float Student::getAverageGrade() const {
 bool Student::operator>(const Student& other) const {
     return this->name > other.name;
 }
+
+bool Student::operator<(const Student& other) const {
+    return this->name < other.name;
+}
+
+ostream& operator<<(ostream& os, const Student& student) {
+    os << student.name << ": " << student.fileNumber;
+    return os;
+}

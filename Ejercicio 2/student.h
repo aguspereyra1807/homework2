@@ -17,6 +17,8 @@ class Student {
         float getAverageGrade() const;
 
         bool operator>(const Student& other) const;
+        bool operator<(const Student& other) const;
+        friend ostream& operator<<(ostream& os, const Student& student);
 
     private:
         std::string name;
