@@ -9,7 +9,7 @@ bool Course::isComplete() {
     return false;
 }
 
-// Si se pudo inscribir al estudiante devuelve true. Caso contrario false
+// Si se pudo inscribir al estudiante devuelve true. Caso contrario false.
 bool Course::inscribeStudent(const std::string name, const int fileNumber) {
     if (isComplete()) {
         cerr << "El curso está completo, no se pudo inscribir a " << name << endl;

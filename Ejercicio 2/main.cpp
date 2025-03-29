@@ -1,6 +1,8 @@
 #include "student.h"
 #include "course.h"
 
+// USAR TRY Y MANEJAR BAD_ALLOCS DE inscribeStudent
+
 int main() {
     Course course("Paradigmas");
     course.inscribeStudent("agus", 1232);
