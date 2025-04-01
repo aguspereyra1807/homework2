@@ -1,19 +1,9 @@
-# Ignorar ejecutables generados por g++
 a.out
 *.exe
 *.o
 *.out
-
-# Ignorar otros archivos temporales o de compilación
 *.obj
 *.gch
-
-# Makefile
-Makefile
-
 .vscode/
-
-# Ejecutables popios
 main
 bin/
-

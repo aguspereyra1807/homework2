@@ -9,7 +9,7 @@ using namespace std;
 
 class Student {
     public:
-        Student(std::string name, int fileNumber);
+        Student(const std::string name, int fileNumber);
 
         std::string getName() const; // const -> no modifica atributos
         int getFileNumber() const;
@@ -21,7 +21,7 @@ class Student {
         friend ostream& operator<<(ostream& os, const Student& student);
 
     private:
-        std::string name;
+        const std::string name;
         const int fileNumber; // atributo no modificable
         mutable vector<pair<std::string,float>> grades; // Vector de pares <CURSO,NOTA_FINAL>, mutable
 };

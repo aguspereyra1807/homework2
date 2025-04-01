@@ -2,8 +2,11 @@
 
 Course::Course(const std::string name): name(name) {}
 
-Course::Course(const std::string name, const Course& other): name(name), students(other.students) {}
-
+Course::Course(const std::string name, const Course& other): name(name) {
+    for (auto i = other.students.begin(); i != other.students.end(); ++i) { // Deep copy
+        students.push_back(make_shared<Student>(**i));
+    }
+}
 bool Course::isComplete() {
     if (students.size() == 20) return true;
     return false;

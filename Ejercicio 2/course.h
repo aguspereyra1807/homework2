@@ -1,11 +1,12 @@
 #pragma once
 #include "student.h"
 #include <memory>
+#include <random>
 
 class Course {
     public:
         Course(const string name);
-        Course(const string name, const Course& other); // shallow copy para copiar cursos
+        Course(const string name, const Course& other); // MODIFICAR A DEEP COPY
 
         bool inscribeStudent(std::string name, int fileNumber);
         void unsuscribeStudent(const int fileNumber);
