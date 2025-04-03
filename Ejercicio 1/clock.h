@@ -2,6 +2,8 @@
 #include <iomanip>
 #include <string>
 #include <stdexcept>
+#include <cstdlib> // Para el clear de consola
+#include <limits>
 
 using namespace std;
 

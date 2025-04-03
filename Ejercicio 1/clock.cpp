@@ -18,23 +18,35 @@ string Clock::getIndicator() {
 } 
 
 void Clock::setHours(int h) {
-    checkData(h);
-    HHh = h;
+    if (checkData(h)) {
+        HHh = h;
+        cout << "Hora seteada correctamente" << endl;
+    }
+    else cerr << "Input incorrecto" << endl;
 }
 
 void Clock::setMinutes(int m) {
-    checkData(HHh, m);
-    MMm = m;
+    if (checkData(HHh, m)) {
+        MMm = m;
+        cout << "Minutos seteados correctamente" << endl;
+    }
+    else cerr << "Input incorrecto" << endl;
 }
 
 void Clock::setSeconds(int s) {
-    checkData(HHh, MMm, s);
-    SSs = s;
+    if (checkData(HHh, MMm, s)) {
+        SSs = s;
+        cout << "Segundos seteados correctamente" << endl;
+    }
+    else cerr << "Input incorrecto" << endl;
 }
 
 void Clock::setIndicator(string indicator) {
-    checkData(HHh, MMm, SSs, indicator);
-    ind = indicator;
+    if (checkData(HHh, MMm, SSs, indicator)) {
+        cout << "Indicador seteado correctamente" << endl;
+        ind = indicator;
+    }
+    else cerr << "Input incorrecto" << endl;
 }
 
 void Clock::print12format() {
