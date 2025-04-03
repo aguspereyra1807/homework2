@@ -1,27 +1,27 @@
 #pragma once
 #include "number.h"
 
-class Real: public Number {
+class Integer: public Number {
     public:
-        Real();
-        Real(double number);
-    
+        Integer();
+        Integer(long number);
+        
         void toString() override;
-        double getValue();
+        long getValue();
 
         unique_ptr<Number> operator + (const Number& other) override;
         unique_ptr<Number> operator - (const Number& other) override;
         unique_ptr<Number> operator * (const Number& other) override;
         unique_ptr<Number> operator / (const Number& other) override;
-
+    
     protected:
         unique_ptr<Number> toInteger() const override;
         unique_ptr<Number> toReal() const override;
         unique_ptr<Number> toComplex() const override;
 
-        friend class Integer;
+        friend class Real;
         friend class Complex;
 
     private:
-        double value;
+        long value;
 };

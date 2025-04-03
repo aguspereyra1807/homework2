@@ -4,6 +4,10 @@
 
 Agustín Pereyra
 
+## Aclaraciones
+
+- Para el ejercicio 3 tuve la propuesta de realizar las operaciones como sobrecarga de operadores, y todas las operaciones dan como resultado un objeto de la clase del objeto de la izquierda de la operación. Es decir que si hago `x = <Integer> + <Complex>`, x será de la clase `<Integer>`, y en el caso de hacer `y = <Complex> + <Integer>`, y será de la clase `<Complex>`
+
 ## Respuestas de los ejercicios
 
 ***2c.*** La relación entre las clases "Course" y "Student" es de **Agregación**:
