@@ -199,7 +199,10 @@ int main() {
                         continue;
                     default:
                         cout << "Input inválido" << endl;
-                        break;
+                        cout << "[Enter] para continuar" << endl;
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                        cin.get();
+                        continue;
                     }
             case 4:
                 return 0;
