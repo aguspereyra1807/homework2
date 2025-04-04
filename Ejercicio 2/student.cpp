@@ -10,6 +10,10 @@ int Student::getFileNumber() const {
     return fileNumber;
 }
 
+void Student::completeCourse(string subject, float finalGrade) {
+    grades.push_back(make_pair(subject, finalGrade));
+}
+
 float Student::getFinalGrade(std::string subject) const{
     for (auto i = grades.begin(); i != grades.end(); ++i) { // iterador <vector>
         if (i->first == subject) return i->second;
@@ -34,6 +38,11 @@ bool Student::operator<(const Student& other) const {
 }
 
 ostream& operator<<(ostream& os, const Student& student) {
-    os << student.name << ": " << student.fileNumber;
+    os << student.name << "\n" << "\tNúmero de Legajo: " << student.fileNumber 
+       << "\n" << "\tPromedio General: " << student.getAverageGrade() << endl;
+    os << "\tCursos Completados" << endl;
+       for (auto i = student.grades.begin(); i != student.grades.end(); ++i){
+        os << "\t -" << i->first << ": Nota final -> " << i->second << endl;
+    }
     return os;
 }

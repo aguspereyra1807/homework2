@@ -10,6 +10,8 @@ Agustín Pereyra
 
 ## Respuestas de los ejercicios
 
+***2b v.*** Lo que se realiza es un *deep copy* del vector, es decir se crea un nuevo vector para el nuevo curso con los mismos estudiantes. Pero a la vez se realiza un *shallow copy* de cada estudiantes. De forma que el objeto estudinate sea único y si modifico un estudiante dentro de un curso, se modifica para los demás también. Pero que pueda manejar el vector de estudiantes de cada curso independientemente.
+
 ***2c.*** La relación entre las clases "Course" y "Student" es de **Agregación**:
 Ya que al curso se lo puede ver como ese "todo", mientras que los estudiantes son sus partes. Pero el estudiante puede seguir existiendo fuera del curso, es decir, el curso no tiene el ownership completo sobre el estudiante, ni mucho menos el estudiante es dependiente de la otra clase.
 

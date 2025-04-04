@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <iostream>
 
-
 using namespace std;
 
 class Student {
@@ -15,6 +14,7 @@ class Student {
         int getFileNumber() const;
         float getFinalGrade(std::string subject) const;
         float getAverageGrade() const;
+        void completeCourse(string subject, float finalGrade);
 
         bool operator>(const Student& other) const;
         bool operator<(const Student& other) const;

@@ -1,12 +1,17 @@
 #include "course.h"
 
-Course::Course(const std::string name): name(name) {}
+Course::Course(const std::string newName): name(newName) {}
 
-Course::Course(const std::string name, const Course& other): name(name) {
-    for (auto i = other.students.begin(); i != other.students.end(); ++i) { // Deep copy
-        students.push_back(make_shared<Student>(**i));
+Course::Course(const std::string newName, const Course& other): name(newName) {
+    for (auto i = other.students.begin(); i != other.students.end(); ++i) { // Shallow copy de cada estudiante
+        students.push_back(*i);
     }
 }
+
+string Course::getName() {
+    return name;
+}
+
 bool Course::isComplete() {
     if (students.size() == 20) return true;
     return false;
@@ -24,9 +29,10 @@ bool Course::inscribeStudent(const std::string name, const int fileNumber) {
     return true;
 }
 
-void Course::unsuscribeStudent(const int fileNumber) {
+void Course::unsuscribeStudent(const int fileNumber, float finalGrade) {
     for (auto i = students.begin(); i != students.end(); ++i) { // iterador de <vector>
         if (i->get()->getFileNumber() == fileNumber) {
+            i->get()->completeCourse(name, finalGrade);
             students.erase(i);
             break; // sino queda un iterador inválido
         } 
