@@ -21,4 +21,8 @@ Se puede compilar y ejecutar cada ejercicio a través del makefile del repositor
 Se creará una carpeta *bin* donde se guardarán todos los ejecutables.
 Para ver el registro de ***valgrind*** y verificar la memoria alocada esta el comando `make valgrind<nº ej>`.
 
-> A la hora de compilar se usa la flag -Wall.
+> Modo de compilación: ``g++ main.cpp <.cpp necesarios> -Wall -o bin/main``.
+> Modo ejecución:
+>
+> - Sin Valgrind -> ./bin/main
+> - Con Valgrind -> valgrind ./bin/main
