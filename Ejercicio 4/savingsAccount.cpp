@@ -12,13 +12,16 @@ bool SavingsAccount::withdraw(double amount) {
 
 void SavingsAccount::info() {
     if (++showCounter > 2) {
-        cout << "Se le descontaron $20\n" << endl;
+        cout << "Se le descontaron $20 en su caja de ahorros\n" << endl;
+        balance -= 20;
         showCounter = 0;
     }
 
-    cout << "Titular: " << owner << "\n"
-         << "Tipo de cuenta: Caja de Ahorro\n"
-         << "Balance: " << balance << endl;
+    cout << "===============================\n" 
+         << "CAJA DE AHORROS\n" 
+         << "Titular: " << owner << "\n"
+         << "Balance: " << balance << "\n"
+         << "===============================\n"<< endl;
 }
 
 double SavingsAccount::getBalance() {

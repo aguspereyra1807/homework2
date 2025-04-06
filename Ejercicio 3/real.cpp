@@ -36,7 +36,7 @@ unique_ptr<Number> Real::operator + (const Number& other) {
     }
 
     double resultValue = this->value + otherReal->getValue();
-    return make_unique<Number>(Real(resultValue));
+    return make_unique<Real>(resultValue);
 }
 
 unique_ptr<Number> Real::operator - (const Number& other) {
@@ -49,7 +49,7 @@ unique_ptr<Number> Real::operator - (const Number& other) {
     }
 
     double resultValue = this->value - otherReal->getValue();
-    return make_unique<Number>(Real(resultValue));
+    return make_unique<Real>(resultValue);
 }
 
 unique_ptr<Number> Real::operator * (const Number& other) {
@@ -62,7 +62,7 @@ unique_ptr<Number> Real::operator * (const Number& other) {
     }
 
     double resultValue = this->value * otherReal->getValue();
-    return make_unique<Number>(Real(resultValue));
+    return make_unique<Real>(resultValue);
 }
 
 unique_ptr<Number> Real::operator / (const Number& other) {
@@ -79,5 +79,5 @@ unique_ptr<Number> Real::operator / (const Number& other) {
     }
 
     double resultValue = this->value / otherReal->getValue();
-    return make_unique<Number>(Real(resultValue));
+    return make_unique<Real>(resultValue);
 }

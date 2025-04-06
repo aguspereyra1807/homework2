@@ -37,7 +37,7 @@ unique_ptr<Number> Integer::operator + (const Number& other) {
     }
 
     long resultValue = this->value + otherInteger->getValue();
-    return make_unique<Number>(Integer(resultValue));
+    return make_unique<Integer>(resultValue);
 }
 
 unique_ptr<Number> Integer::operator - (const Number& other) {
@@ -50,7 +50,7 @@ unique_ptr<Number> Integer::operator - (const Number& other) {
     }
 
     long resultValue = this->value - otherInteger->getValue();
-    return make_unique<Number>(Integer(resultValue));
+    return make_unique<Integer>(resultValue);
 }
 
 unique_ptr<Number> Integer::operator * (const Number& other) {
@@ -63,7 +63,7 @@ unique_ptr<Number> Integer::operator * (const Number& other) {
     }
 
     long resultValue = this->value * otherInteger->getValue();
-    return make_unique<Number>(Integer(resultValue));
+    return make_unique<Integer>(resultValue);
 }
 
 unique_ptr<Number> Integer::operator / (const Number& other) {
@@ -80,5 +80,5 @@ unique_ptr<Number> Integer::operator / (const Number& other) {
     }
 
     long resultValue = static_cast<long>(this->value / otherInteger->getValue());
-    return make_unique<Number>(Integer(resultValue));
+    return make_unique<Integer>(resultValue);
 }

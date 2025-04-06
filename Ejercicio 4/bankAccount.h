@@ -12,6 +12,6 @@ class BankAccount { // Clase Abstracta
         virtual ~BankAccount() = default;
 
     protected:
-        double balance = 0.0;
         string owner;
+        double balance = 0.0;
 };

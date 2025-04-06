@@ -16,7 +16,8 @@ double Complex::getImaginaryComponent() {
 }
 
 void Complex::toString() {
-    cout << realComponent << " + " << imaginaryComponent << "i" << endl;
+    if (imaginaryComponent >= 0) cout << realComponent << "+" << imaginaryComponent << "i" << endl;
+    else cout << realComponent <<  imaginaryComponent << "i" << endl;
 }
 unique_ptr<Number> Complex::toInteger() const {
     return make_unique<Integer>(static_cast<long>(realComponent));
@@ -40,7 +41,7 @@ unique_ptr<Number> Complex::operator + (const Number& other) {
     }
     double resultReal = this->realComponent + otherComplex->getRealComponent();
     double resultImaginary = this->imaginaryComponent + otherComplex->getImaginaryComponent();
-    return make_unique<Number>(Complex(resultReal, resultImaginary));
+    return make_unique<Complex>(resultReal, resultImaginary);
 }
 
 unique_ptr<Number> Complex::operator - (const Number& other) {
@@ -54,7 +55,7 @@ unique_ptr<Number> Complex::operator - (const Number& other) {
 
     double resultReal = this->realComponent - otherComplex->getRealComponent();
     double resultImaginary = this->imaginaryComponent - otherComplex->getImaginaryComponent();
-    return make_unique<Number>(Complex(resultReal, resultImaginary));
+    return make_unique<Complex>(resultReal, resultImaginary);
 }
 
 unique_ptr<Number> Complex::operator * (const Number& other) {
@@ -76,7 +77,7 @@ unique_ptr<Number> Complex::operator * (const Number& other) {
     double resultImaginary = (this->realComponent * otherComplex->getImaginaryComponent()) 
     + (this->imaginaryComponent * otherComplex->getRealComponent());
 
-    return make_unique<Number>(Complex(resultReal, resultImaginary));
+    return make_unique<Complex>(resultReal, resultImaginary);
 }
 
 unique_ptr<Number> Complex::operator / (const Number& other) {
@@ -101,5 +102,5 @@ unique_ptr<Number> Complex::operator / (const Number& other) {
     
     double resultImaginary = (b*c - a*d) / (c*c + d*d);
     
-    return make_unique<Number>(Complex(resultReal, resultImaginary));
+    return make_unique<Complex>(resultReal, resultImaginary);
 }

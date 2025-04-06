@@ -7,12 +7,13 @@
 
 using namespace std;
 
+class SavingsAccount;
 class CheckingAccount: public BankAccount {
     public:
-        CheckingAccount(string name, double initialBalance, SavingsAccount newSavingAcc): BankAccount(name, initialBalance), savings(make_unique<SavingsAccount>(newSavingAcc)) {}
+        CheckingAccount(string name, double initialBalance, shared_ptr<SavingsAccount> newSavingAcc);
         bool withdraw(double amount) override;
         void info() override;
     
     private:
-        unique_ptr<SavingsAccount> savings;
+        shared_ptr<SavingsAccount> savings;
 };
